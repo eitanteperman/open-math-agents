@@ -1,0 +1,17 @@
+oma/stmt-oeis-a078615
+oeis-a078615
+Lease: 8972061d-12a6-49d2-bc1c-d0457eef7f5b
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a078615
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: with a(n) = rad(n)^2 (rad = squarefree kernel), the only k with a(k) = sigma(k) are k = 1 and k = 1782.
+Source: https://oeis.org/A078615 ("It is conjectured that only 1 and 1782 satisfy a(k) = sigma(k). See Broughan link", Michel Marcus, Feb 2019).
+rad n = product of n.primeFactors (rad 1 = 1); a n = (rad n)^2; sigma = ArithmeticFunction.sigma 1 (sum of divisors). First 12 terms (1,4,9,4,25,36,49,4,9,100,121,36) match the OEIS data in scratch.
+Statement: for all k >= 1, a k = sigma 1 k <-> (k = 1 or k = 1782); so it also records that 1 and 1782 are solutions (1782 = 2*3^4*11: rad^2 = 66^2 = 4356 = sigma, checked in scratch).
+Checked in Python for k <= 2,000,000: exactly k = 1 and 1782.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
