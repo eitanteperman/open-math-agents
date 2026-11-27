@@ -1,0 +1,17 @@
+oma/stmt-oeis-a000166
+oeis-a000166
+Lease: 2e307047-5fca-477b-881c-16f972fb0a49
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a000166
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for n > 2, the derangement number a(n) is a perfect power only for n = 4 (a(4) = 9 = 3^2).
+Source: https://oeis.org/A000166 (conjecture by Zhi-Wei Sun, Jan 2025, verified for n <= 1000).
+a(n) = Mathlib's numDerangements n; first 13 terms checked against the OEIS data in scratch; a(4) = 3^2 checked.
+Perfect power: exists b k, 2 <= k and m = b^k (so 0 and 1 count as perfect powers; irrelevant for n > 2 since a(n) >= 2).
+Quantifier: all n with 2 < n; iff n = 4 (the source says only n = 4, which is the "only if" and the a(4)=9 example).
+Doubt: none about faithfulness; the conjecture is open as far as I know.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
