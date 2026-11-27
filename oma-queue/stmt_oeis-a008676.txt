@@ -1,0 +1,17 @@
+oma/stmt-oeis-a008676
+oeis-a008676
+Lease: e00d5850-9c43-416d-ad02-15135c21073d
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a008676
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for all n >= 0, a(n) = floor(2(n+3)/3) - floor(3(n+3)/5), where a(n) = coefficient of x^n in 1/((1-x^3)(1-x^5)).
+Source: https://oeis.org/A008676 (conjecture by John W. Layman, Sep 2009).
+a(n) is defined as the number of pairs (i, j) with 3i + 5j = n, i.e. partitions of n into parts 3 and 5, which equals the series coefficient (OEIS comment by Andrew Baxter); not defined via PowerSeries directly.
+Floors: integer division on nonnegative integers in Z; subtraction in Z, so no truncation.
+Checked in scratch: first 20 terms match the OEIS data; formula verified n < 25 by decide +kernel and n < 500 in Python.
+Doubt: definition is the partition count, not literally the power-series inverse; the two agree (generating function of parts 3 and 5).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
