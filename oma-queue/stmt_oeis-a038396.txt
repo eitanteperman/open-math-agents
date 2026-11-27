@@ -1,0 +1,17 @@
+oma/stmt-oeis-a038396
+oeis-a038396
+Lease: 0f61f0a9-14b9-4d3d-b359-cd52c14c05eb
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a038396
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: the number obtained by writing 2n, 2n-2, ..., 4, 2 next to each other in decimal is never a perfect power (n >= 1). Smarandache's conjecture.
+Source: https://oeis.org/A038396 ("Concatenate first n even numbers in reverse order", conjecture noted by Michel Marcus, Mar 2014).
+a defined recursively: a 0 = 0, a (n+1) = 2(n+1) * 10^(digits of a n) + a n (prepending 2(n+1) to the decimal string of a n); a 1 = 2, a 2 = 42, a 3 = 642.
+Perfect power: exists b k, 2 <= k and m = b^k. Quantifier: all n >= 1 (offset 1).
+Checked in scratch: first 9 terms match the OEIS data (decide +kernel); Python: no a(n) is a perfect power for n < 120.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
