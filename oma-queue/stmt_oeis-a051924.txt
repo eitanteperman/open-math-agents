@@ -1,0 +1,17 @@
+oma/stmt-oeis-a051924
+oeis-a051924
+Lease: 0ecb6a95-9b7f-4de9-b79b-5d62415301cc
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a051924
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: with a(n) = binomial(2n,n) - binomial(2n-2,n-1), a(n) mod n^2 = n + 2 if and only if n is an odd prime.
+Source: https://oeis.org/A051924 (conjecture by Gary Detlefs, Feb 2013).
+a(n) = (2n).choose n - (2n-2).choose (n-1) in the naturals (never truncates), offset 1; first 13 terms (1,4,14,50,...) match the OEIS data in scratch.
+Quantifier: all n >= 1; statement a n % n^2 = n + 2 <-> (Nat.Prime n and Odd n).
+Checked: n = 1..40 by decide +kernel, n < 1500 in Python. Note for n = 2, n + 2 = 4 = n^2 so the congruence cannot hold, consistent with 2 not being an odd prime.
+Doubt: none about faithfulness; open.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
