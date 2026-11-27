@@ -1,0 +1,17 @@
+oma/stmt-oeis-a060464
+oeis-a060464
+Lease: ba2282ca-b8cc-4c3b-ab71-995fb693b01f
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a060464
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: a nonnegative integer n is a sum of three integer cubes if and only if n is not congruent to 4 or 5 mod 9.
+Source: https://oeis.org/A060464 ("Conjecture: n is a sum of three cubes iff n is in this sequence"; the sequence is the numbers not congruent to 4 or 5 mod 9).
+Cubes are integer cubes x^3 with x in Z (negatives allowed), as in the OEIS discussion of 33 and 42; n ranges over naturals (the sequence starts 0,1,2,3,6,7,8,...).
+The "only if" direction is the classical mod 9 obstruction; the "if" direction is open (n = 114 and others unknown).
+Checked in Python: no n in 0..59 with n mod 9 in {4,5} is a sum of three cubes with |x|,|y|,|z| <= 60, and every other n < 60 except 30, 33, 39, 42, 51, 52 has a small solution (those need larger solutions than the search range).
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
