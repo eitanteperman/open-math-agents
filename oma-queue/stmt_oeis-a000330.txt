@@ -1,0 +1,17 @@
+oma/stmt-oeis-a000330
+oeis-a000330
+Lease: 3e02ed42-5180-4706-9afd-acd2728df1c4
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a000330
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: every integer is a sum of three generalized square pyramidal numbers (negative indices allowed).
+Source: https://oeis.org/A000330 (conjecture by Altug Alkan, Jul 2020; A000330(n) = n(n+1)(2n+1)/6).
+pyr : Z -> Z, n(n+1)(2n+1)/6 with exact integer division; "generalized" = index x ranges over all of Z.
+Checked in scratch: pyr n for n=0..17 matches OEIS data; pyr(-2) = -1; every m in [-6,6] is a sum of three values.
+Quantifier: for all m in Z there exist x y z in Z with m = pyr x + pyr y + pyr z (the comment says every integer).
+Doubt: none; stronger r-gonal variant in the comment is not formalized.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
