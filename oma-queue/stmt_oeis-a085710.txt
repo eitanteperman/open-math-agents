@@ -1,0 +1,16 @@
+oma/stmt-oeis-a085710
+oeis-a085710
+Lease: 2c2e55a7-ecd3-4987-a704-f197ec2b5425
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a085710
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for every n > 2 there is a k < n such that n*k + 1 is a semiprime.
+Source: https://oeis.org/A085710 ("Conjecture: for every n > 2 there exists a number k < n such that n*k + 1 is a semiprime"; a(n) = smallest k such that kn+1 is a semiprime).
+Semiprime = product of exactly two primes, not necessarily distinct, formalized as ArithmeticFunction.cardFactors m = 2 (Omega m = 2). k ranges over 0 < k < n (the sequence's a(n) is the smallest k >= 1).
+Checked: Python for 3 <= n < 20000: a(n) < n always (data begins 3,4,1,2,1,4,2,1,1,2,...); in scratch IsSemiprime 4, 6, 9 hold and 7, 8 do not, and the existence of k holds for n = 3..12 by decide +kernel.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
