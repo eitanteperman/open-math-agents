@@ -1,0 +1,16 @@
+oma/stmt-oeis-a004642
+oeis-a004642
+Lease: a7a35ad2-8068-447d-a5cd-7c03a160d247
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a004642
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for n > 15, the ternary (base 3) expansion of 2^n contains the digit 0.
+Source: https://oeis.org/A004642 (Sloane 1973 conjecture; see also A102483, still open; checked to 200000 there).
+Formalized as: forall n, 15 < n -> 0 in Nat.digits 3 (2^n). The source says "a 0 between the most and least significant digits"; those end digits are nonzero (2^n is not divisible by 3), so any 0 digit is between them.
+Checked in scratch: in 1..15 the powers with no digit 0 are exactly n = 1,2,3,4,15 (matches A102483); all n in 16..200 contain a 0; verified to n < 3000 in Python.
+Doubt: none about faithfulness; the problem is open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
