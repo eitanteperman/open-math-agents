@@ -1,0 +1,17 @@
+oma/stmt-oeis-a068494
+oeis-a068494
+Lease: f53d858f-c795-4f60-84c7-c79a90df83da
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a068494
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: Lehmer's totient conjecture: for n > 2, n mod phi(n) = 1 if and only if n is prime (equivalently phi(n) divides n-1 only for primes).
+Source: https://oeis.org/A068494 ("By Lehmer's Conjecture, when n > 2 then a(n) = 1 if and only if n is prime", Michael Somos, Oct 2011).
+a(n) = n % Nat.totient n (Mathlib's totient), offset 1; first 13 terms (0,0,1,0,1,0,1,0,3,2,1,0,1) match the OEIS data in scratch.
+Quantifier: all n with 2 < n; iff Nat.Prime n. The prime direction is easy (n mod (n-1) = 1); the open part is that no composite n has phi(n) | n-1.
+Checked: n in 3..60 by decide +kernel; Python for n <= 400000: iff holds (Lehmer's problem has been checked far beyond that in the literature).
+Doubt: none about faithfulness; open (a famous open problem, not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
