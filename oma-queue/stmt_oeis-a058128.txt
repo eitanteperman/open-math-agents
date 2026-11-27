@@ -1,0 +1,17 @@
+oma/stmt-oeis-a058128
+oeis-a058128
+Lease: b6c51692-aad3-4d48-be76-b25669bb6aac
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a058128
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for even n >= 2, a(n) = (n^n - n)/(n-1)^2 is prime or a weak Fermat pseudoprime to base n.
+Source: https://oeis.org/A058128 (conjecture by Davide Rotondo, Nov 2024).
+a(1) = 1, a(n) = (n^n - n) / (n-1)^2 for n >= 2 in naturals (exact division); first 8 terms match the OEIS data in scratch (1,2,6,28,195,1866,22876,342392).
+Weak Fermat pseudoprime to base b: composite m with b^m = b (mod m); this reading (not b^(m-1) = 1) is the one that fits: the latter fails already at n = 4 in Python, the former holds for all even n < 120.
+Quantifier: all even n >= 2 (a(n) >= 2 there). Checked a(4) = 28 composite with 4^28 = 4 (mod 28) in scratch.
+Doubt: the OEIS comment does not define "weak Fermat pseudoprime"; I used the standard b^m = b (mod m) definition.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
