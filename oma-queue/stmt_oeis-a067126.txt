@@ -1,0 +1,17 @@
+oma/stmt-oeis-a067126
+oeis-a067126
+Lease: 498582a3-b3ab-4ea3-916f-dd24f06fd4e9
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a067126
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: the only composite numbers n with phi(n) >= phi(k) for all k < n (A067126) are 4 and 9.
+Source: https://oeis.org/A067126 ("Conjecture: 4 and 9 are the only composite terms"; OEIS notes no more composite terms below 1.5e18).
+IsTerm n := 1 <= n and for all k < n, Nat.totient k <= Nat.totient n (k = 0 has totient 0, so it is harmless; the source says k = 1 to n-1).
+Statement: for all n, (1 < n and not prime and IsTerm n) <-> (n = 4 or n = 9), so it also records that 4 and 9 really are terms.
+Checked in scratch: IsTerm 4, IsTerm 9 and not IsTerm 6 (Lean); Python for n <= 300000: terms start 1,2,3,4,5,7,9,11,... and the composite ones are exactly 4 and 9.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
