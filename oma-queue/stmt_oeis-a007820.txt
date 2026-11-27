@@ -1,0 +1,17 @@
+oma/stmt-oeis-a007820
+oeis-a007820
+Lease: 24410da6-97da-4479-b813-bd1362e3b663
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a007820
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: with a(n) = S(2n, n) (Stirling numbers of the second kind), a(2n+1) is divisible by (2n+1)^2 for all n >= 0.
+Source: https://oeis.org/A007820 (conjecture by Peter Bala, Mar 2025).
+a(n) = Nat.stirlingSecond (2*n) n, offset 0; first 10 terms (1,1,7,90,1701,...) match the OEIS data in scratch.
+Checked: divisibility for n = 0..29 by decide +kernel (and n < 60 in Python); a(2) = 7 not divisible by 4 shows the 2n+1 form matters.
+Quantifier: all n in N, index 2n+1 (odd indices), modulus (2n+1)^2. n = 0 gives a(1) = 1 divisible by 1.
+Doubt: none about faithfulness.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
