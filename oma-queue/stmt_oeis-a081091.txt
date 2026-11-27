@@ -1,0 +1,16 @@
+oma/stmt-oeis-a081091
+oeis-a081091
+Lease: cc7a54ad-cd68-4377-a790-f7080cf6da55
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a081091
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: there are infinitely many primes of the form 2^i + 2^j + 1 with i > j > 0, i.e. infinitely many primes with exactly three bits set in binary (Wagstaff's conjecture).
+Source: https://oeis.org/A081091 ("Sam Wagstaff (see paper) conjectured that there are infinite primes with exactly 3 bits set").
+S := {p | p.Prime and exists i j, 0 < j < i and p = 2^i + 2^j + 1}; the statement is S.Infinite. j > 0 excludes the Fermat primes 2^i + 2 (hence the "without the Fermat primes" comment).
+Checked: Python reproduces the 19 listed terms 7, 11, 13, 19, 37, 41, 67, 73, 97, 131, 137, 193, 521, 577, 641, 769, 1033, 1153, 2053; in scratch 7, 11, 13 are in S and 5 is not.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
