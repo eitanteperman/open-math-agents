@@ -1,0 +1,17 @@
+oma/stmt-oeis-a030173
+oeis-a030173
+Lease: 5dd59a07-a1b3-4df0-bc4d-10396f8d2c0f
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a030173
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: the set of differences p - q of two primes q < p equals {positive even numbers} union {p - 2 : p an odd prime} (Polignac, 1849).
+Source: https://oeis.org/A030173 ("Conjectured (Polignac 1849) to be union of even numbers and the odd primes minus 2").
+Formalized as an equality of sets of naturals: LHS {d | exists primes q < p, d = p - q}; RHS {d | 0 < d and Even d} union {d | exists odd prime p, d + 2 = p}.
+Checked in Python (primes < 3000, differences < 400): equality holds and the sorted prefix 1,2,3,4,5,6,8,9,10,... matches the OEIS data (1 = 3-2 is included, so p = 3 is allowed).
+The odd differences are easy (an odd difference forces q = 2); the open part is that every positive even number is a difference of two primes.
+Doubt: "even numbers" read as positive even (0 is not a difference of distinct primes and is not in the data).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
