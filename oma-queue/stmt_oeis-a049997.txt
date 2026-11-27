@@ -1,0 +1,17 @@
+oma/stmt-oeis-a049997
+oeis-a049997
+Lease: d5df4933-c876-4685-8645-69d1395941bc
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a049997
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for integers 2 < m < n, Fibonacci(m)*Fibonacci(n) is a perfect power only for (m, n) = (3, 6), where it equals 2*8 = 16 = 2^4.
+Source: https://oeis.org/A049997 (conjecture by Zhi-Wei Sun, Jan 2025, verified for 2 < m < n <= 900).
+Fibonacci is Mathlib's Nat.fib (fib 3 = 2, fib 6 = 8). Perfect power: exists b k, 2 <= k and x = b^k.
+Quantifier: all naturals m n with 2 < m < n; iff (m = 3 and n = 6). The reverse direction records that (3,6) really is a solution (16 = 2^4, checked in scratch).
+Checked in Python: only (3,6) for 2 < m < n < 160.
+Doubt: none about faithfulness; open.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
