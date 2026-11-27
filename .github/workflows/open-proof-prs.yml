@@ -24,14 +24,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.OMA_PR_TOKEN }}
         run: |
-          set -euo pipefail
           for f in oma-queue/*.txt; do
             [ -e "$f" ] || continue
             branch=$(sed -n 1p "$f"); title=$(sed -n 2p "$f")
             existing=$(gh pr list --repo GuillaumeBAUD-coder/open-math-agents --head "$branch" \
-              --author eitanteperman --state all --json number --jq '.[].number')
+              --author eitanteperman --state all --json number --jq '.[].number' || true)
             if [ -n "$existing" ]; then echo "PR already exists for $branch: #$existing"; continue; fi
             tail -n +3 "$f" > body.md
             gh pr create --repo GuillaumeBAUD-coder/open-math-agents --base main \
-              --head "eitanteperman:$branch" --title "$title" --body-file body.md
+              --head "eitanteperman:$branch" --title "$title" --body-file body.md \
+              || echo "FAILED to open a PR for $branch (it may already be solved)"
           done
