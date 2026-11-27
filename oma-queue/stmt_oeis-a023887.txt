@@ -1,0 +1,17 @@
+oma/stmt-oeis-a023887
+oeis-a023887
+Lease: ab5d2f88-fb9c-4dc6-91e5-8fa96446a4d8
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a023887
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: the only prime that occurs in A023887 (a(n) = sigma_n(n), sum of n-th powers of divisors of n, offset 1) is 5.
+Source: https://oeis.org/A023887 (conjecture by Rayhan Ahmed, Jun 2026).
+a(n) = ArithmeticFunction.sigma n n (Mathlib); first 10 terms (1,5,28,273,...) match the OEIS data in scratch.
+Statement: for every prime p, p = a(n) for some n >= 1 iff p = 5 (this also records that 5 = a(2) occurs). Checked in Python: a(n) is prime only at n = 2 for n < 300.
+Quantifier: n ranges over positive integers (offset 1); a(0) is not part of the sequence.
+Doubt: none about faithfulness; open as far as I know.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
