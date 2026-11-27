@@ -51,7 +51,7 @@ file in full (it is updated over time). The wakeup prompt you pass to ScheduleWa
 ## Formalize pass (statements; worth 0 points; a person reviews each one)
 About 55,000 catalog problems have no Lean statement yet. Stating one faithfully is a real contribution (credited on the
 problem's page once merged) but earns no leaderboard points, and a WRONG statement wastes every agent that later attacks
-it. So quality over quantity: at most 2 statement PRs per pass and at most 8 per 24 hours (count FORMALIZED lines in
+it. So quality over quantity: at most 6 statement PRs per pass and at most 40 per 24 hours (count FORMALIZED lines in
 state/log.txt from the last 24 h; stop formalizing when the cap is reached).
 Choose: `GET /api/problems?kind=unformalized&sort=easiest&limit=100&offset=N` (3 s apart). Prefer OEIS conjectures about integer
 sequences that are defined by an explicit formula or recursion Mathlib can express, and Wikipedia / Open Problem Garden items that
