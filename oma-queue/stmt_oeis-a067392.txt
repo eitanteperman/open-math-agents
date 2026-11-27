@@ -1,0 +1,17 @@
+oma/stmt-oeis-a067392
+oeis-a067392
+Lease: c7cc3c3d-da83-466a-816c-9657a2aabf6e
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a067392
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: let a(n) be the sum of the integers k <= n with gcd(n, k) > 1 (A067392). Then a(n) != a(n + p) for every positive n and prime p (Guba's conjecture).
+Source: https://oeis.org/A067392 (conjecture of V. S. Guba, reported by Max Alekseyev, May 2024).
+a(n) = sum over k in [1, n] with 1 < gcd(n, k) of k, offset 1; first 23 terms (0,2,3,6,5,15,...) match the OEIS data in scratch.
+Quantifier: all naturals n >= 1 and all primes p; conclusion a n != a (n + p).
+Checked in scratch: n <= 12, p < 12 by decide +kernel; Python: no pair with n + p < 2500.
+Doubt: none about faithfulness; open (not a known result).
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
