@@ -1,0 +1,17 @@
+oma/stmt-oeis-a000680
+oeis-a000680
+Lease: f08603e0-8e08-483b-ad68-012539eb388d
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a000680
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for n > 0, a(n) + 2^n is a multiple of 2n+1 iff 2n+1 is prime, where a(n) = (2n)!/2^n (OEIS A000680).
+Source: https://oeis.org/A000680 (conjecture by Werner Schulte, Oct 2025; a later comment says a proof exists).
+a(n) formalized as (2*n)! / 2^n in naturals; the division is exact.
+Checked in scratch: first 11 terms match OEIS data; the iff verified for n = 1..60 by decide +kernel.
+Quantifier: all n with 0 < n; divisibility is (2n+1) ∣ a n + 2^n; primality is Nat.Prime (2n+1).
+No doubts about faithfulness; note the source says a proof exists, so this is a formalization of a known result.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
