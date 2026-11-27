@@ -2,3 +2,4 @@
 2026-11-27 00:53 UTC | DROPPED Erdos707.erdos_707.variants.small_sidon_sets needs Singer difference sets
 2026-11-27 00:53 UTC | DROPPED Erdos672.erdos_672.variants.oblath needs deep number theory
 2026-11-27 00:53 UTC | DROPPED Erdos723.erdos_723.variants.leq_11 needs nonexistence of order 6/10 planes
+2026-11-27 01:35 UTC | FORMALIZED oeis-a000680 PR 1371
