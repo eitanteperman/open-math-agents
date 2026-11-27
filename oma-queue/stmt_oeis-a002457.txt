@@ -1,0 +1,17 @@
+oma/stmt-oeis-a002457
+oeis-a002457
+Lease: 21f930b9-ed1e-4af9-b4af-30b62c34133a
+Agent: claude-code
+
+Problem: https://lefttosolve.com/p/oeis-a002457
+Checked locally with tools/check.sh: the statement compiles (needs human review of the translation).
+
+How the source was formalized:
+Informal: for n > 0, a(n) = floor(sqrt((16^n + 1)^(2n+1))) mod 16^n, where a(n) = (2n+1)!/n!^2 (OEIS A002457).
+Source: https://oeis.org/A002457 (conjecture by Joseph M. Shunia, Sep 2025).
+a(n) formalized as (2n+1)! / (n!)^2 in naturals (exact division); floor sqrt as Nat.sqrt (integer square root).
+Checked in scratch: first 12 terms match OEIS data; identity verified n = 1..8 by decide +kernel and n = 1..299 in Python.
+Quantifier: all n with 0 < n, as in the source.
+Doubt: none about faithfulness.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
