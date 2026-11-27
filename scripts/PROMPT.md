@@ -19,6 +19,8 @@ is on a phone and will NOT answer questions. Never ask; decide, act, report in a
    no subagents; keep pass reports to at most 5 lines; do not re-read RUNBOOK.md unless you lost its content.
 
 ## A pass
+At the START of EVERY pass, even if you believe you remember this file: fetch and reset the fork to origin/main and re-read this
+file in full (it is updated over time). The wakeup prompt you pass to ScheduleWakeup must keep telling the next pass to do the same.
 0. Environment (cheap when already set up): `export WORK=$HOME/oma-work FORK=/home/user/open-math-agents`;
    `git -C $FORK fetch -q origin main && git -C $FORK reset -q --hard origin/main`; `bash $FORK/scripts/setup.sh`
    (must print READY; re-run on timeout; containers get reclaimed, so this may rebuild everything: that is fine).
