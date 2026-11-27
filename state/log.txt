@@ -1,2 +1,3 @@
 2026-11-27 00:49 UTC | pipeline test: continuous mode set up
 2026-11-27 00:53 UTC | DROPPED Erdos707.erdos_707.variants.small_sidon_sets needs Singer difference sets
+2026-11-27 00:53 UTC | DROPPED Erdos672.erdos_672.variants.oblath needs deep number theory
